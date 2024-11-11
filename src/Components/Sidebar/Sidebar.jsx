@@ -2,11 +2,11 @@ import React from 'react';
 import { Box, VStack, Text, List, ListItem, ListIcon, Divider } from '@chakra-ui/react';
 import { MdDashboard, MdCalendarToday, MdBarChart, MdPerson, MdChat, MdLogout } from 'react-icons/md';
 
-const Sidebar = () => {
+const Sidebar = ({display}) => {
   return (
     <Box
     position='fixed'
-      display="flex"
+      display={display}
       flexDirection="column"
       width="250px"
       height="100vh"

@@ -6,20 +6,21 @@ import CenterSection from "./Components/CenterSection/CenterSection.jsx";
 
 function App() {
   return (
-    <Flex>
-      <Sidebar />
-      <Flex direction={["column","column","row"]} justify='space-between'>
+    <Flex direction={{ base: "column", md: "row" }}>
+      <Sidebar display={{ base: "none", md: "block" }} />
       <Box
+        flex="1"
         display="flex"
         justifyContent="center"
         alignItems="flex-start"
         padding="10px"
-        bg="#f7f7f7" 
+        bg="#f7f7f7"
+        overflow="auto"
+        width="100%"
       >
         <CenterSection />
       </Box>
-      <RightSidebar />
-      </Flex>
+      <RightSidebar display={{ base: "block", md: "block" }} />
     </Flex>
   );
 }

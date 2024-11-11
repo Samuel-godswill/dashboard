@@ -51,13 +51,13 @@ const RightSidebar = () => {
       bg="white" 
       borderRadius="md"
       boxShadow="md" 
-      position="fixed" 
-      right="0" 
-      top="0" 
-      height="100vh" 
-      // overflowY="auto" 
+      position={{ base: "relative", md: "fixed" }} 
+      right={{ base: "0", md: "0" }} 
+      top={{ base: "0", md: "0" }}
+      height={{ base: "auto", md: "100vh" }} 
+      overflowY="auto" 
     >
-      <Flex align="center" mb={4}>
+      <Flex align="center" mb={4} justify={{ base: "center", md: "flex-start" }}> 
         <Text fontSize={{ base: "sm", md: "md" }} mr={2}> 
           {userName}
         </Text>
@@ -77,7 +77,7 @@ const RightSidebar = () => {
           </MenuList>
         </Menu>
       </Flex>
-      <Box mb={4}>
+      <Box mb={4} display={{ base: "flex", md: "block" }} justifyContent={{ base: "center", md: "flex-start" }} alignItems="center">
         <Calendar onChange={handleDateChange} value={date} />
       </Box>
 
@@ -106,8 +106,9 @@ const RightSidebar = () => {
         </ModalContent>
       </Modal>
       <Box>
-        <Text fontSize='1xl' fontWeight='bold' marginBottom='20px'>Last Notification</Text>
-        <Stack textAlign="left" backgroundColor='#fcfcfc' p='10px' borderRadius='8px' marginBottom='10px'>
+        <Text fontSize='1xl' fontWeight='bold' marginBottom='20px' textAlign={{ base: 'center', md: 'left' }}>Last Notification</Text>
+        <Stack spacing={4}>
+        <Stack textAlign={{ base: 'center', md: 'left' }} backgroundColor='#fcfcfc' p='10px' borderRadius='8px'>
           <Text fontSize="18" fontWeight="bold">
             Person 1
           </Text>
@@ -115,7 +116,7 @@ const RightSidebar = () => {
             made an appointment
           </Text>
         </Stack>
-        <Stack textAlign="left" backgroundColor='#fcfcfc' p='10px' borderRadius='8px' marginBottom='10px'>
+        <Stack textAlign={{ base: 'center', md: 'left' }} backgroundColor='#fcfcfc' p='10px' borderRadius='8px'>
           <Text fontSize="18" fontWeight="bold">
           Person 2
           </Text>
@@ -123,7 +124,7 @@ const RightSidebar = () => {
             made an appointment
           </Text>
         </Stack>
-        <Stack textAlign="left" backgroundColor='#fcfcfc' p='10px' borderRadius='8px' marginBottom='10px'>
+        <Stack textAlign={{ base: 'center', md: 'left' }} backgroundColor='#fcfcfc' p='10px' borderRadius='8px'>
           <Text fontSize="18" fontWeight="bold">
           Person 3
           </Text>
@@ -131,7 +132,7 @@ const RightSidebar = () => {
             made an appointment
           </Text>
         </Stack>
-        <Stack textAlign="left" backgroundColor='#fcfcfc' p='10px' borderRadius='8px' marginBottom='10px'>
+        <Stack textAlign={{ base: 'center', md: 'left' }} backgroundColor='#fcfcfc' p='10px' borderRadius='8px'>
           <Text fontSize="18" fontWeight="bold">
           Person 4
           </Text>
@@ -139,13 +140,14 @@ const RightSidebar = () => {
             made an appointment
           </Text>
         </Stack>
-        <Stack textAlign="left" backgroundColor='#fcfcfc' p='10px' borderRadius='8px' marginBottom='10px'>
+        <Stack textAlign={{ base: 'center', md: 'left' }} backgroundColor='#fcfcfc' p='10px' borderRadius='8px'>
           <Text fontSize="18" fontWeight="bold">
           Person 5
           </Text>
           <Text fontSize="16" marginTop='-15px'>
             made an appointment
           </Text>
+        </Stack>
         </Stack>
       </Box>
     </Box>
